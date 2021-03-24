@@ -11,6 +11,15 @@ public class User {
     private String password;
     private byte[] image;
     private String dateCreated;
+    private String fireBaseUserId;
+
+    public String getFireBaseUserId() {
+        return fireBaseUserId;
+    }
+
+    public void setFireBaseUserId(String fireBaseUserId) {
+        this.fireBaseUserId = fireBaseUserId;
+    }
 
     public String getBucketName() {
         return bucketName;
@@ -46,15 +55,7 @@ public class User {
         this.password = password;
     }
 
-    public FirebaseUser getFirebaseUser() {
-        return firebaseUser;
-    }
 
-    public void setFirebaseUser(FirebaseUser firebaseUser) {
-        this.firebaseUser = firebaseUser;
-    }
-
-    private FirebaseUser firebaseUser;
 
     public String getFolderName() {
         return folderName;

@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         FirebaseUser firebaseUser = auth.getCurrentUser();
                         if (firebaseUser != null) {
-                            user.setFirebaseUser(firebaseUser);
+                            user.setFireBaseUserId(firebaseUser.getUid());
                             sendVerificationEmail(firebaseUser);
                         }
                         uploadToS3(user);
@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void uploadToS3(User user) {
-         new UploadTask(dialog).execute(user);
+         new UploadTask(dialog, this).execute(user);
 
 
     }
